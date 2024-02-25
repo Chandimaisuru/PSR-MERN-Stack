@@ -1,7 +1,11 @@
 import { Button, Grid, Input, Typography } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 
 function UserForm(props) {
+
+    const[id,setID] = useState(0);
+    const[name,setName] = useState('');
+
     return (
         <Grid
             container
@@ -43,8 +47,8 @@ function UserForm(props) {
                     id='id'
                     name='id'
                     sx={{ width: '400px' }}
-                    value={""}
-                    onChange={e => { }}
+                    value={id}
+                    onChange={e => setID(e.target.value)}
 
                 />
 
@@ -76,8 +80,8 @@ function UserForm(props) {
                     id='name'
                     name='name'
                     sx={{ width: '400px' }}
-                    value={""}
-                    onChange={e => { }}
+                    value={name}
+                    onChange={e => setName(e.target.value)}
 
                 />
 
